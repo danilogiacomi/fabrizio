@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 
 <!--
@@ -23,11 +25,11 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
 
             <div>
             <label for="testo">Testo</label>
-            <input type="text" name="testo" id="testo"/>
+            <input type="text" name="testo" id="testo" placeholder="scrivi qui il testo da convertire"/>
             <br/>
 
             <label for="chiave">Chiave</label>
-            <input type="text" name="chiave" id="chiave"/>
+            <input type="text" name="chiave" placeholder="intero, es: 13" id="chiave"/>
             
             <br/>
             <label for="direzione">Direzione</label>
@@ -39,7 +41,8 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
             
 <br/>
             
-            <input type="submit" value="invia" onclick="vai()"/>
+<input type="submit" value="Cripta" onclick="vai('direct')"/>
+<input type="submit" value="Decripta" onclick="vai('inverse')"/>
 
 
 
@@ -50,12 +53,14 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
 
 
         <div id="alfabeto">
-            A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+           
             </div>        
             <div id="alfabeto-criptato"></div>
 
 
-            <div class="risultato"></div>
+            <br/>
+            Risultato: 
+            <div id="risultato"></div>
 
 
 
@@ -69,57 +74,99 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
 <script>
 
 
- function rot (testo, direzione, chiave, alf){
-    alf2=[] ;
 
+function scriviAlfabeto(alfabeto, id){
+    var table = "<table> <tr>";
+    for (var i = 0; i < alfabeto.length; i++) {    
+      l = alfabeto[i];
+      table += "<td width='25px'>" + l + "</td>";
+    }
+    table += "</tr></table>";
+    $("#" + id).html(table);
+
+}
+
+ function rot (testo, direzione, chiave, alf){
+
+    alf2=[] ;
+    // se la chiave e' > alf.length facciamo il modulo
     chiave = chiave % alf.length;
 
-        for(i=parseInt(chiave); i<alf.length; i++){
 
-            alf2.push(alf[i]);
-     }
+
+if (direzione == 'left') {
+    for(i=parseInt(chiave); i<alf.length; i++){
+        alf2.push(alf[i]);
+    }
     for(i=0; i<parseInt(chiave); i++){
         alf2.push(alf[i]);
     }
-    /*for(letters in  #testo){
-        
+
+} else {
+    for(i=parseInt(alf.length-chiave); i<alf.length; i++){
+        alf2.push(alf[i]);
     }
-    */
-    
+    for(i=0; i<parseInt(alf.length-chiave); i++){
+        alf2.push(alf[i]);
+    }
+
+
+}
 
     return alf2;
 
  }
 
-function vai(){
+
+function cripta(a1, a2, testo, verso="direct"){
+
+if (verso == "direct"){
+    source = a1;
+    dest = a2;
+} else {
+    source = a2;
+    dest = a1;   
+}
+
+
+testoCriptato = "";
+    for (var i = 0; i < testo.length; i++) {    
+        l = testo.charAt(i).toUpperCase();
+        posizioneInAlf = source.indexOf(l);
+        testoCriptato += dest[posizioneInAlf];
+    }
+
+    return testoCriptato;
+}
+
+function vai(verso){
 
     alf=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-  
     testo = $("#testo").val();
     direzione = $("#direzione").val();
     chiave = $("#chiave").val();
 
     alf2 = rot (testo, direzione, chiave, alf);
     
-    alfabetoCriptato = "";
-    for(lettera in alf2){
+ /**
+  verso = "direct" | "inverse"
+ */
 
-        alfabetoCriptato += alf2[lettera] + " ";
-    }
-    $("#alfabeto-criptato").html(alfabetoCriptato);
+    testoCriptato = cripta(alf, alf2, testo, verso);
 
-    testoCriptato = "";
 
-    for (var i = 0; i < testo.length; i++) {    
-    
-        l = testo.charAt(i).toUpperCase();
-        posizioneInAlf = alf.indexOf(l);
-        console.log(posizioneInAlf);
+    scriviAlfabeto(alf, "alfabeto");
+    scriviAlfabeto(alf2, "alfabeto-criptato");
 
-    }
-
+    $("#risultato").html(testoCriptato);
 }
 
+ // alfabetoCriptato = "";
+    // for(lettera in alf2){
+
+    //     alfabetoCriptato += alf2[lettera] + " ";
+    // }
+    // $("#alfabeto-criptato").html(alfabetoCriptato);
 
 
  // per far riferimento a un id si usa il carattere # prima del nome
