@@ -17,62 +17,60 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
 
     <body>
 
+        <div class="container">
 
-
-
-
-
-
-            <div>
-            <label for="testo">Crittografatore, creato da Fabrizio</label>
-            <br/>
-            <label for="testo">Testo</label>
-            <input type="text" name="testo" id="testo" placeholder="scrivi qui il testo da convertire"/>
-            <br/>
-
-            <label for="chiave">Chiave</label>
-            <input type="text" name="chiave" placeholder="intero, es: 13" id="chiave"/>
-            
-            <br/>
-            <label for="direzione">Direzione</label>
-            <select id="direzione">
-                    <option value="left">Sx</option>
-                    <option value="right">Dx</option>
-                </select>
-            
-            
-<br/>
-            
-<input type="submit" value="Cripta" onclick="vai('direct')"/>
-<input type="submit" value="Decripta" onclick="vai('inverse')"/>
-
-
-
-            
-        </div>        
-
-
-
-
-        <div id="alfabeto">
-           
+            <div class="row">
+                <div class="col-12">
+                    <label for="testo">Crittografatore, creato da Fabrizio</label>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-12">
+                    <label for="testo">Testo</label>
+                    <input type="text" name="testo" id="testo" placeholder="scrivi qui il testo da convertire"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="chiave">Chiave</label>
+                    <input type="text" name="chiave" placeholder="intero, es: 13" id="chiave"/>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-12">
+                
+                    <label for="direzione">Direzione</label>
+                    <select id="direzione">
+                            <option value="left">Sx</option>
+                            <option value="right">Dx</option>
+                    </select>
+                </div> 
+            </div>
+                
+            <div class="row">
+                <div class="col-12">
+                    <input type="submit" value="Cripta" onclick="vai('direct')"/>
+                    <input type="submit" value="Decripta" onclick="vai('inverse')"/>
+                </div> 
             </div>        
-            <div id="alfabeto-criptato"></div>
 
+            <div class="row">
+                <div class="col-12" id="alfabeto">
+                </div>        
+            </div>        
+                
+            <div class="row">
+                <div class="col-12" id="alfabeto-criptato">
+                </div>
+            </div> 
 
-            <br/>
-            Risultato: 
-            <div id="risultato"></div>
-
-
-
-
-
-
-
+            <div class="row">
+                Risultato: 
+                <div class="col-12"id="risultato">
+                </div>
+            </div> 
+        </div>        
     </body>
-
-
 <script>
 
 
