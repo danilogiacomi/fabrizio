@@ -25,6 +25,7 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
             <label for="testo">Testo</label>
             <input type="text" name="testo" id="testo"/>
             <br/>
+
             <label for="chiave">Chiave</label>
             <input type="text" name="chiave" id="chiave"/>
             
@@ -49,7 +50,7 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
 
 
         <div id="alfabeto">
-                A B C D...
+            A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
             </div>        
             <div id="alfabeto-criptato"></div>
 
@@ -72,7 +73,25 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
 
 
  function rot (testo, direzione, chiave){
-     return testo + ' ' + direzione + ' ' + chiave ;
+    alf=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    alf2=[] ;
+
+    chiave = chiave % alf.length;
+
+
+    console.log(testo);
+    console.log(chiave);
+
+        for(i=parseInt(chiave); i<alf.length; i++){
+
+            alf2.push(alf[i]);
+     }
+    for(i=0; i<parseInt(chiave); i++){
+        alf2.push(alf[i]);
+    }
+
+    return alf2;
+
  }
 
 function vai(){
@@ -81,8 +100,18 @@ function vai(){
     direzione = $("#direzione").val();
     chiave = $("#chiave").val();
 
-    risultato = rot (testo, direzione, chiave);
-    $("#alfabeto-criptato").html(risultato);
+    alf2 = rot (testo, direzione, chiave);
+    
+    
+    alfabetoCriptato = "";
+    for(lettera in alf2){
+
+        alfabetoCriptato += alf2[lettera] + " ";
+    }
+    $("#alfabeto-criptato").html(alfabetoCriptato);
+
+
+
 }
 
 
