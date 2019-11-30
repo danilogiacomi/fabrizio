@@ -63,24 +63,16 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
 
 
 
-
-
-
     </body>
 
 
 <script>
 
 
- function rot (testo, direzione, chiave){
-    alf=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+ function rot (testo, direzione, chiave, alf){
     alf2=[] ;
 
     chiave = chiave % alf.length;
-
-
-    console.log(testo);
-    console.log(chiave);
 
         for(i=parseInt(chiave); i<alf.length; i++){
 
@@ -101,12 +93,13 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
 
 function vai(){
 
+    alf=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  
     testo = $("#testo").val();
     direzione = $("#direzione").val();
     chiave = $("#chiave").val();
 
-    alf2 = rot (testo, direzione, chiave);
-    
+    alf2 = rot (testo, direzione, chiave, alf);
     
     alfabetoCriptato = "";
     for(lettera in alf2){
@@ -115,7 +108,15 @@ function vai(){
     }
     $("#alfabeto-criptato").html(alfabetoCriptato);
 
+    testoCriptato = "";
 
+    for (var i = 0; i < testo.length; i++) {    
+    
+        l = testo.charAt(i).toUpperCase();
+        posizioneInAlf = alf.indexOf(l);
+        console.log(posizioneInAlf);
+
+    }
 
 }
 
