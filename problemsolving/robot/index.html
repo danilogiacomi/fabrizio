@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html>
+
+<!--
+
+Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
+
+-->
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title> Robot</title>
+    <style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, “Helvetica Neue”, Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
+        /* default is 1rem or 16px */
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    </style>
+    <link rel="icon" href="pack.png" style="width:100%;">
+</head>
+
+
+    <body>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="/">
+                <img src="pack.png" alt="Torna alla homepage" style="width: 40px; height: 40px;" style="width:100%;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="http://fabrizio.rf.gd" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Strumenti Problem Solving</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="#">
+                                    Crittografatore
+                                </a>
+                                <a class="dropdown-item" href="https://www.olimpiadiproblemsolving.it/web/index.php" target="_blank">
+                                    Sito Olimpiadi Problem Solving
+                                </a>
+                                <a class="dropdown-item" href="http://fabrizio.rf.gd/problemsolving/robot" target="_blank">
+                                    Calcolatore percorso robot
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </ul>
+            <div class="collapse navbar-collapse" id="navbarsExample04">
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+                    <h2>Robot</h2>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-12">
+                    <label for="initpos">Posizione iniziale</label>
+                    [<input type="text" name="initpos" id="initpos" placeholder="Scrivi nel formato 1,3,e"/>]
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-12">
+                    <label for="mosse">Mosse</label>
+                    <input type="text" name="mosse" id="mosse" placeholder="Scrivi le mosse separate da virgole"/>
+                </div>
+            </div>
+           
+                
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Vai" onclick="vai()">Vai</button>
+                </div> 
+            </div>        
+
+            <div class="row">
+                <div class="col-12" id="alfabeto">
+                </div>        
+            </div>        
+                
+            <div class="row">
+                <div class="col-12" id="alfabeto-criptato">
+                </div>
+            </div> 
+
+            <div class="row">
+                <div class="col-12">
+                        Risultato: 
+                </div>
+                <div class="col-12" id="risultato">
+                </div>
+            </div> 
+        </div>        
+        <script>
+
+          var direzioni = ["n", "e", "s", "o"];
+
+
+
+
+          function ruota_orario(pos){
+             var i = direzioni.indexOf(pos);
+             i = (i + 1) % direzioni.length ;
+             return direzioni[i];
+          }
+          function ruota_antiorario(pos){
+            var i = direzioni.indexOf(pos);
+            if (i == 0) {
+                 return direzioni[direzioni.length - 1];
+            }
+            i = (i - 1) % direzioni.length;
+            return direzioni[i];
+          }
+
+          function vai(){
+
+            var init = $("#initpos").val().split(",");
+            var mosse = $("#mosse").val().split(",");
+
+            var x = init[0];
+            var y = init[1];
+            var d = init[2];
+
+
+            var percorso = [];
+            var last = [x,y,d];
+            percorso.push(last);
+
+            for (i in mosse){
+                var mossa = mosse[i];
+
+                switch (mossa){
+                    case "f":
+                    // f -> vai avanti
+
+                    switch (d){
+                        case "n":
+                          // incremento y   
+                          y = parseInt(y) + 1;
+                        break;
+                        case "e":
+                          // incremento x
+                          x = parseInt(x) + 1;
+                        break;
+                        case "s":
+                          // decremento y
+                          y = parseInt(y) - 1;
+                          break;
+                        case "o":
+                          // decremento x
+                          x = parseInt(x) - 1;
+                          break;
+                        default: 
+                        // TODO: dare errore
+                    }
+
+                    break;
+                    case "o":
+                        // o -> ruota in senso orario
+                        d = ruota_orario(d);
+                    break;
+                    case "a":
+                        // a -> ruota in senso antiorario
+                        d = ruota_antiorario(d);
+                    break;
+                    default:
+                    // TODO: dare errore
+                }
+
+                last = [x,y,d];
+                percorso.push(last);
+
+            }
+
+            $("#risultato").html("");
+            for (i in percorso){
+
+              $("#risultato").append ("[" + percorso[i][0] + "," + percorso[i][1] + "," + percorso[i][2] + "]") 
+
+                if (i < percorso.length - 1){
+                    $("#risultato").append(",");
+                }
+
+            }
+            console.log(percorso);
+
+          }
+
+        </script>      
+    </body>
+</html>
