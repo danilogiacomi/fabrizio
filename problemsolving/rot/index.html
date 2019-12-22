@@ -22,78 +22,42 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
         line-height: 1.5;
     }
     </style>
-    <link rel="icon" href="pack.png">
+    <link rel="icon" href="pack.png" style="width:100%;">
 </head>
 
 
     <body>
-                <!--
-            Vecchia navbar
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <a class="navbar-brand" href="/">
-                <img src="pack.png" alt="Torna alla homepage" style="width: 40px; height: 40px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-      
-            <div class="collapse navbar-collapse" id="navbarsExample04">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdown04">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-md-0">
-                <input class="form-control" type="text" placeholder="Search">
-              </form>
-            </div>
-          </nav>
-        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="/">
-                <img src="pack.png" alt="Torna alla homepage" style="width: 40px; height: 40px;">
+                <img src="pack.png" alt="Torna alla homepage" style="width: 40px; height: 40px;" style="width:100%;">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-              </ul>
-              <div class="collapse navbar-collapse" id="navbarsExample04">
                 <ul class="navbar-nav mr-auto">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown04">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </li>
-                </ul>
-              <form class="form-inline mt-2 mt-md-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://fabrizio.rf.gd" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Strumenti Problem Solving</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                        <a class="nav-link disabled" href="#">
+                            Crittografatore
+                        </a>
+                        <a class="dropdown-item" href="https://www.olimpiadiproblemsolving.it/web/index.php" target="_blank">
+                              Sito Olimpiadi Problem Solving
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+              </ul>
+            <div class="collapse navbar-collapse" id="navbarsExample04">
+                
+            <!--Barra "cerca"
+                <form class="form-inline mt-2 mt-md-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
+              </form>-->
             </div>
         </nav>
         <br>
@@ -131,8 +95,8 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
                 
             <div class="row">
                 <div class="col-12">
-                    <input type="submit" value="Cripta" onclick="vai('direct')"/>
-                    <input type="submit" value="Decripta" onclick="vai('inverse')"/>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Cripta" onclick="vai('direct')">Cripta</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Decripta" onclick="vai('inverse')">Decripta</button>
                 </div> 
             </div>        
 
@@ -153,116 +117,118 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
                 <div class="col-12" id="risultato">
                 </div>
             </div> 
-            <br>
-            <div class="row">
-                <div class="col-12">
-                    <a href="http://fabrizio.rf.gd/">Torna alla homepage</a>
+            <!--
+                <br>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="http://fabrizio.rf.gd/">Torna alla homepage</a>
+                    </div>
+                    <div class="col-12">
+                        <h5>Creato da Fabrizio</h5>
+                    </div>
                 </div>
-                <div class="col-12">
-                    <h5>Creato da Fabrizio</h5>
-                </div>
-            </div>
+            -->
         </div>        
         <script>
-        function scriviAlfabeto(alfabeto, id){
-            var table = "<table> <tr>";
-            for (var i = 0; i < alfabeto.length; i++) {    
-            l = alfabeto[i];
-            table += "<td width='25px'>" + l + "</td>";
-            }
-            table += "</tr></table>";
-            $("#" + id).html(table);
+            function scriviAlfabeto(alfabeto, id){
+                var table = "<table> <tr>";
+                for (var i = 0; i < alfabeto.length; i++) {    
+                l = alfabeto[i];
+                table += "<td width='25px'>" + l + "</td>";
+                }
+                table += "</tr></table>";
+                $("#" + id).html(table);
 
-        }
-
-        function rot (testo, direzione, chiave, alf){
-
-            alf2=[] ;
-            // se la chiave e' > alf.length facciamo il modulo
-            chiave = chiave % alf.length;
-
-
-
-        if (direzione == 'left') {
-            for(i=parseInt(chiave); i<alf.length; i++){
-                alf2.push(alf[i]);
-            }
-            for(i=0; i<parseInt(chiave); i++){
-                alf2.push(alf[i]);
             }
 
-        } else {
-            for(i=parseInt(alf.length-chiave); i<alf.length; i++){
-                alf2.push(alf[i]);
-            }
-            for(i=0; i<parseInt(alf.length-chiave); i++){
-                alf2.push(alf[i]);
-            }
+            function rot (testo, direzione, chiave, alf){
+
+                alf2=[] ;
+                // se la chiave e' > alf.length facciamo il modulo
+                chiave = chiave % alf.length;
 
 
-        }
 
-            return alf2;
+            if (direzione == 'left') {
+                for(i=parseInt(chiave); i<alf.length; i++){
+                    alf2.push(alf[i]);
+                }
+                for(i=0; i<parseInt(chiave); i++){
+                    alf2.push(alf[i]);
+                }
 
-        }
+            } else {
+                for(i=parseInt(alf.length-chiave); i<alf.length; i++){
+                    alf2.push(alf[i]);
+                }
+                for(i=0; i<parseInt(alf.length-chiave); i++){
+                    alf2.push(alf[i]);
+                }
 
 
-        function cripta(a1, a2, testo, verso="direct"){
-
-        if (verso == "direct"){
-            source = a1;
-            dest = a2;
-        } else {
-            source = a2;
-            dest = a1;   
-        }
-
-
-        testoCriptato = "";
-            for (var i = 0; i < testo.length; i++) {    
-                l = testo.charAt(i).toUpperCase();
-                posizioneInAlf = source.indexOf(l);
-                testoCriptato += dest[posizioneInAlf];
             }
 
-            return testoCriptato;
-        }
+                return alf2;
 
-        function vai(verso){
-
-            alf=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-            testo = $("#testo").val();
-            direzione = $("#direzione").val();
-            chiave = $("#chiave").val();
-
-            alf2 = rot (testo, direzione, chiave, alf);
-            
-        /**
-        verso = "direct" | "inverse"
-        */
-
-            testoCriptato = cripta(alf, alf2, testo, verso);
+            }
 
 
-            scriviAlfabeto(alf, "alfabeto");
-            scriviAlfabeto(alf2, "alfabeto-criptato");
+            function cripta(a1, a2, testo, verso="direct"){
 
-            $("#risultato").html(testoCriptato);
-        }
-
-        // alfabetoCriptato = "";
-            // for(lettera in alf2){
-
-            //     alfabetoCriptato += alf2[lettera] + " ";
-            // }
-            // $("#alfabeto-criptato").html(alfabetoCriptato);
+            if (verso == "direct"){
+                source = a1;
+                dest = a2;
+            } else {
+                source = a2;
+                dest = a1;   
+            }
 
 
-        // per far riferimento a un id si usa il carattere # prima del nome
-        // es:  #alfabeto
-        //
-        // per far riferimento a una classe si usa il carattere . prima del nome
-        // es:  .risultato
+            testoCriptato = "";
+                for (var i = 0; i < testo.length; i++) {    
+                    l = testo.charAt(i).toUpperCase();
+                    posizioneInAlf = source.indexOf(l);
+                    testoCriptato += dest[posizioneInAlf];
+                }
+
+                return testoCriptato;
+            }
+
+            function vai(verso){
+
+                alf=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+                testo = $("#testo").val();
+                direzione = $("#direzione").val();
+                chiave = $("#chiave").val();
+
+                alf2 = rot (testo, direzione, chiave, alf);
+                
+            /**
+            verso = "direct" | "inverse"
+            */
+
+                testoCriptato = cripta(alf, alf2, testo, verso);
+
+
+                scriviAlfabeto(alf, "alfabeto");
+                scriviAlfabeto(alf2, "alfabeto-criptato");
+
+                $("#risultato").html(testoCriptato);
+            }
+
+            // alfabetoCriptato = "";
+                // for(lettera in alf2){
+
+                //     alfabetoCriptato += alf2[lettera] + " ";
+                // }
+                // $("#alfabeto-criptato").html(alfabetoCriptato);
+
+
+            // per far riferimento a un id si usa il carattere # prima del nome
+            // es:  #alfabeto
+            //
+            // per far riferimento a una classe si usa il carattere . prima del nome
+            // es:  .risultato
 
 
         </script>      
