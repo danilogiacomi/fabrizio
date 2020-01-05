@@ -26,7 +26,7 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     </head>
 
-    <body>
+    <body style="background-color:#ededed">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="/">
                 <img src="pack.png" alt="Torna alla homepage" style="width: 40px; height: 40px;" style="width:100%;">
@@ -56,12 +56,32 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
         <br>
         <br>
         <br>
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">
+                    Robot
+                </h1>
+                <p>
+                    Questo e' il calcolatore del percorso del robot, ideato apposta per il Problem Solving.
+                    Scopri l'ampia gamma di strumenti offerti.
+                </p>
+                <p>
+                    <a class="btn btn-outline-primary btn-lg" href="http://fabrizio.rf.gd/" role="button">
+                        Scopri
+                        <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" clip-rule="evenodd">
+                            </path>
+                        </svg>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <br>
         <div class="container">
 
             <div class="row">
                 <div class="col-12">
-                    <h2>Robot</h2>
-                    <h4>Non scrivere lettere maiuscole nei comandi</h4>
+                    <h2>Calcolatore percorso del robot</h2>
                 </div>
             </div>
             <div class="row">   
@@ -80,19 +100,10 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
                 
             <div class="row">
                 <div class="col-12">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Vai" onclick="vai()">Vai</button>
+                    <button class="btn btn-success my-2 my-sm-0" type="submit" value="Vai" onclick="vai()">Vai</button>
                 </div> 
             </div>        
 
-            <div class="row">
-                <div class="col-12" id="alfabeto">
-                </div>        
-            </div>        
-                
-            <div class="row">
-                <div class="col-12" id="alfabeto-criptato">
-                </div>
-            </div> 
 
             <div class="row">
                 <div class="col-12">
@@ -141,7 +152,12 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
                     </div>
 
                 </div>
-                <a class="btn btn-light btn-lg btn-block" href="#" role="button">Torna a inizio pagina</a>
+                <a class="btn btn-light btn-lg btn-block" href="#" role="button"  style="background-color:#ededed">Torna a inizio pagina
+                    <svg class="bi bi-chevron-up" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M9.646 6.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L10 7.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clip-rule="evenodd">
+                        </path>
+                    </svg>
+                </a>
             </footer>
         </div>  
         <script>
@@ -208,14 +224,53 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
                     }
 
                     break;
+
+                    case "F":
+                    // f -> vai avanti
+
+                    switch (d){
+                        case "n":
+                          // incremento y   
+                          y = parseInt(y) + 1;
+                        break;
+                        case "e":
+                          // incremento x
+                          x = parseInt(x) + 1;
+                        break;
+                        case "s":
+                          // decremento y
+                          y = parseInt(y) - 1;
+                          break;
+                        case "o":
+                            // decremento x
+                            x = parseInt(x) - 1;
+                            break;
+                        default: 
+                        // TODO: dare errore
+                    }
+
+                    break;
+
                     case "o":
                         // o -> ruota in senso orario
                         d = ruota_orario(d);
                     break;
+
+                    case "O":
+                        // o -> ruota in senso orario
+                        d = ruota_orario(d);
+                    break;
+
                     case "a":
                         // a -> ruota in senso antiorario
                         d = ruota_antiorario(d);
                     break;
+
+                    case "A":
+                        // a -> ruota in senso antiorario
+                        d = ruota_antiorario(d);
+                    break;
+
                     default:
                     // TODO: dare errore
                 }
