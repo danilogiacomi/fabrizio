@@ -65,9 +65,9 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
         <br>
         <div class="jumbotron">
             <div class="container">
-                <h1 class="display-3">
+                <h2>
                     Crittografatore
-                </h1>
+                </h2>
                 <p>
                     Questo e' il crittografatore, ideato apposta per il Problem Solving.
                     Scopri l'ampia gamma di strumenti offerti.
@@ -88,15 +88,14 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
 
             <div class="row">
                 <div class="col-12">
-                    <h2>Crittografatore</h2>
                     <h4>Inserire una parola per volta, senza spazi ne' caratteri speciali.</h4>
                 </div>
             </div>
-            <div class="row">   
+            <div class="row"> 
                 <div class="col-12">
                     <label for="testo">Testo</label>
                     <input type="text" name="testo" id="testo" placeholder="Scrivi il testo da convertire"/>
-                </div>
+                </div>                
             </div>
             <div class="row">
                 <div class="col-12">
@@ -106,11 +105,14 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
             </div> 
             <div class="row">
                 <div class="col-12">
-                 <label for="direzione">Direzione</label>
-                    <select id="direzione">
-                            <option value="left">Sx</option>
-                            <option value="right">Dx</option>
+                    <form class="form-inline">
+                    <label for="direzione">Direzione </label>
+                    <select class="form-control form-control-sm" id="direzione">
+                        <option value="left">Sx</option>
+                        <option value="right">Dx</option>
                     </select>
+                    </form>
+                    <br>
                 </div> 
             </div>
                 
