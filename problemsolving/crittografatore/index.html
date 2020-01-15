@@ -91,26 +91,33 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
                     <h4>Inserire una parola per volta, senza spazi ne' caratteri speciali.</h4>
                 </div>
             </div>
+            <br>
             <div class="row"> 
                 <div class="col-12">
-                    <label for="testo">Testo</label>
-                    <input type="text" name="testo" id="testo" placeholder="Scrivi il testo da convertire"/>
-                </div>                
+                    <form class="form-inline">
+                            <label for="testo">Testo</label>
+                            <input type="text" name="testo" id="testo" class="form-control" placeholder="Scrivi il testo da convertire"/>
+                    </form>
+                    <br>
+                </div>               
             </div>
             <div class="row">
                 <div class="col-12">
-                    <label for="chiave">Chiave</label>  
-                    <input type="text" name="chiave" placeholder="Intero, come 13" id="chiave"/>
+                    <form class="form-inline">
+                        <label for="chiave">Chiave</label>  
+                        <input type="text" class="form-control" name="chiave" placeholder="Intero, come 13" id="chiave"/>
+                    </form>
+                    <br>
                 </div>
             </div> 
             <div class="row">
                 <div class="col-12">
                     <form class="form-inline">
-                    <label for="direzione">Direzione </label>
-                    <select class="form-control form-control-sm" id="direzione">
-                        <option value="left">Sx</option>
-                        <option value="right">Dx</option>
-                    </select>
+                        <label for="direzione">Direzione </label>
+                        <select class="form-control" id="direzione">
+                            <option value="left">Sx</option>
+                            <option value="right">Dx</option>
+                        </select>
                     </form>
                     <br>
                 </div> 
@@ -140,6 +147,9 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
                 <div class="col-12" id="risultato">
                 </div>
             </div> 
+            <br>
+            <br>
+            <br>
             <footer class="pt-4 my-md-5 pt-md-5 border-top">
                 <div class="row">
                     <div class="col-12 col-md">
