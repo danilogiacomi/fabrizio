@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 
 <html>
-
     <head>
-
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="/css/style.css">   
+        <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"> -->
+        <!-- </script> -->
+        <script src="/css/bootstrap/js/jquery-3.4.1.slim.js">
         </script>
-
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"> -->
+        <!-- </script> -->
+        <script src="/css/bootstrap/js/popper.js">
         </script>
-
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"> -->
+        <!-- </script> -->
+        <script src="/css/bootstrap/js/bootstrapcdn.js">
         </script>
-
         <script src="/includehtml.js">
         </script>
-
-     
-
+        <link rel="stylesheet" href="/css/style.css">
         <title>
             Benvenuti
         </title>
-
         <style>
             body {
                 font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, “Helvetica Neue”, Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
@@ -32,215 +31,29 @@
                 line-height: 1.5;
             }
         </style>
-
         <link rel="icon" href="pack.png" style="width:100%;">
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     </head>
-
-    <body style="background-color:#ededed">
-
-      <!--  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-
-            <a class="navbar-brand" href="/">
-                <img src="pack.png" alt="Torna alla homepage" style="width: 40px; height: 40px;" style="width:100%;">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">
-                </span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://fabrizio.rf.gd" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Strumenti Problem Solving
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown04">
-                                <a class="dropdown-item" href="http://fabrizio.rf.gd/problemsolving/crittografatore/">
-                                    Crittografatore
-                                </a>
-                                <a class="dropdown-item" href="http://fabrizio.rf.gd/problemsolving/robot">
-                                    Calcolatore percorso robot
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </ul>
-
-            </div>
-
-        </nav> -->
-
+    <body>
         <br>
-
         <br>
-
-        <div id="navbar" w3-include-html="/navbar.html">
+        <div id="navbar" w3-include-html="/frames/navbar.html">
         </div>
-
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
-                </li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1" class="">
-                </li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2" class="">
-                </li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" alt="Prima" src="pack.png" data-holder-rendered="true">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" alt="Seconda" src="pack.png" data-holder-rendered="true">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" alt="Terza" src="pack.png" data-holder-rendered="true">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true" title="Precedente">
-                </span>
-                <span class="sr-only">
-                    Precedente
-                </span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true" title="Successivo">
-                </span>
-                <span class="sr-only">
-                    Successiva
-                </span>
-            </a>
-        </div>
-        
+        <div id="carousel" w3-include-html="/frames/home/carousel.html">
+        </div>       
         <br>
-
+        <br>
         <div class="container">
-
-            <div class="row">
-                <div class="col">
-                    <img src="pack.png" alt=" " class="rounded-circle" width="140" height="140">
-                    <h2">
-                        Crittografatore
-                    </h2> 
-                    <p>
-                        L'unico crittografatore creato apposta per il Problem Solving
-                    </p>
-                    <p>
-                        <a class="btn btn-outline-primary btn-sm" href="/problemsolving/crittografatore" role="button" title="Scopri">
-                            Scopri Altro
-                            <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" clip-rule="evenodd">
-                                </path>
-                            </svg>
-                        </a>
-                    </p>
-                </div>
-                <div class="col">
-                    <img src="pack.png" alt=" " class="rounded-circle" width="140" height="140">
-                    <h2>
-                        Calcolatore percorso robot
-                    </h2>
-                    <p>
-                        Hai un robot immaginario, che si muove in un piano cartesiano, e tu gli devi dare comandi per fargli fare un percorso.
-                    </p>
-                    <p>
-                        <a class="btn btn-outline-primary btn-sm" href="/problemsolving/robot" role="button" title="Scopri">
-                            Scopri Altro
-                            <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" clip-rule="evenodd">
-                                </path>
-                            </svg>
-                        </a>
-                    </p>
-                </div>
+            <div id="featurette-box" w3-include-html="/frames/home/featurette-box.html">
             </div>
-
             <br>
-
             <br>
-
             <br>
-
-            <div class="bd-example">
-                <div id="accordion">
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h5 class="mb-0">
-                                <button class="btn btn-light collapsed btn-block" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    Calcolatore del percorso del robot: risolti problemi
-                                </button>
-                            </h5>
-                        </div>                
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="background-color: #ededed;">
-                            <div class="card-body">
-                                <p>
-                                    Abbiamo notato che nel Calcolatore del percorso del Robot se si scriveva una lettera maiuscola nei comandi non funzionava.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h5 class="mb-0">
-                                <button class="btn btn-light collapsed btn-block" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    E' stato creato il Calcolatore del percorso del robot
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion" style="background-color: #ededed;">
-                            <div class="card-body">
-                                <p>
-                                    E' nato un nuovo strumento per il Problem Solving.
-                                </p>
-                                <p>
-                                    Il nuovo calcolatore del percorso ti aiutera' a risolvere i piu' difficili problemi.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h5 class="mb-0">
-                                <button class="btn btn-light collapsed btn-block" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Crittografatore
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion" style="background-color: #ededed;">
-                            <div class="card-body">
-                                <p>
-                                    Ecco il nuovissimo Crittografatore, che unisce vari sistemi per crittografare i tuoi messaggi.
-                                </p>
-                                <p>
-                                    Prova:
-                                </p>
-                                <p>
-                                    CHIAVE: 4
-                                </p>
-                                <p>
-                                    DIREZIONE: Sx
-                                </p>
-                                <p>
-                                    GMES
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="storia" w3-include-html="/frames/home/storia.html">
             </div>
-
             <br>
         </div>
-        <div class="container-fluid">    
-            <hr class="featurette-divider">
-        </div>
-        <div class="container">
+        <div class="container">    
             <div class="row featurette">
                 <div class="col-md-7">
                     <h2 class="featurette-heading">
@@ -257,17 +70,13 @@
                     <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt=" " style="width: 140px; height: 140px;" src="pack.png" data-holder-rendered="true">
                 </div>
             </div>
-
         </div>
         <div class="container-fluid">
-            <div id="navbar" w3-include-html="/footer.html">
+            <div id="navbar" w3-include-html="/frames/footer.html">
             </div>
         </div>
-
         <script>
             includeHTML();
         </script>
-
-    </body>
-    
+    </body>   
 </html>
