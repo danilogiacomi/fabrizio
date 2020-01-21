@@ -1,5 +1,19 @@
-body
-{
-    background-color: #272727;
-    color: #ffffff;
+/* body */
+body {
+    color: #000000;
+    background-color: #ededed;
+}
+
+/* links */
+a:link {
+    color: #000000;
+}
+a:visited {
+    color: #000000;
+}
+a:hover {
+    color: #000000;
+}
+a:active {
+    color: #000000;
 }
