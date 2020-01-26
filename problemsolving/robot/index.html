@@ -1,40 +1,18 @@
 <!DOCTYPE html>
 
 <html>
-
-<!--
-
-Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
-
--->
     <head>
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
         <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="/css/style.css">   
-        <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"> -->
-        <!-- </script> -->
         <script src="/css/bootstrap/js/jquery-3.4.1.slim.js">
         </script>
-        <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"> -->
-        <!-- </script> -->
         <script src="/css/bootstrap/js/popper.js">
         </script>
-        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"> -->
-        <!-- </script> -->
         <script src="/css/bootstrap/js/bootstrapcdn.js">
         </script>
         <script src="/includehtml.js">
         </script>
         <title> Robot</title>
-        <style>
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, “Helvetica Neue”, Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
-                /* default is 1rem or 16px */
-                font-size: 20px;
-                font-weight: 400;
-                line-height: 1.5;
-            }
-        </style>
         <link rel="icon" href="/pack.png" >
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     </head>
@@ -150,141 +128,143 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
             <div id="footer" w3-include-html="/frames/footer.html">
             </div>
         </div>
+        <script src="/frames/robot/js/vai.js">
+        </script>
         <script>
 
-          var direzioni = ["n", "e", "s", "o"];
+        //   var direzioni = ["n", "e", "s", "o"];
 
 
 
 
-          function ruota_orario(pos){
-             var i = direzioni.indexOf(pos);
-             i = (i + 1) % direzioni.length ;
-             return direzioni[i];
-          }
-          function ruota_antiorario(pos){
-            var i = direzioni.indexOf(pos);
-            if (i == 0) {
-                 return direzioni[direzioni.length - 1];
-            }
-            i = (i - 1) % direzioni.length;
-            return direzioni[i];
-          }
+        //   function ruota_orario(pos){
+        //      var i = direzioni.indexOf(pos);
+        //      i = (i + 1) % direzioni.length ;
+        //      return direzioni[i];
+        //   }
+        //   function ruota_antiorario(pos){
+        //     var i = direzioni.indexOf(pos);
+        //     if (i == 0) {
+        //          return direzioni[direzioni.length - 1];
+        //     }
+        //     i = (i - 1) % direzioni.length;
+        //     return direzioni[i];
+        //   }
 
-          function vai(){
+        //   function vai(){
 
-            var init = $("#initpos").val().split(",");
-            var mosse = $("#mosse").val().split(",");
+        //     var init = $("#initpos").val().split(",");
+        //     var mosse = $("#mosse").val().split(",");
 
-            var x = init[0];
-            var y = init[1];
-            var d = init[2];
+        //     var x = init[0];
+        //     var y = init[1];
+        //     var d = init[2];
 
 
-            var percorso = [];
-            var last = [x,y,d];
-            percorso.push(last);
+        //     var percorso = [];
+        //     var last = [x,y,d];
+        //     percorso.push(last);
 
-            for (i in mosse){
-                var mossa = mosse[i];
+        //     for (i in mosse){
+        //         var mossa = mosse[i];
 
-                switch (mossa){
-                    case "f":
-                    // f -> vai avanti
+        //         switch (mossa){
+        //             case "f":
+        //             // f -> vai avanti
 
-                    switch (d){
-                        case "n":
-                          // incremento y   
-                          y = parseInt(y) + 1;
-                        break;
-                        case "e":
-                          // incremento x
-                          x = parseInt(x) + 1;
-                        break;
-                        case "s":
-                          // decremento y
-                          y = parseInt(y) - 1;
-                          break;
-                        case "o":
-                          // decremento x
-                          x = parseInt(x) - 1;
-                          break;
-                        default: 
-                        // TODO: dare errore
-                    }
+        //             switch (d){
+        //                 case "n":
+        //                   // incremento y   
+        //                   y = parseInt(y) + 1;
+        //                 break;
+        //                 case "e":
+        //                   // incremento x
+        //                   x = parseInt(x) + 1;
+        //                 break;
+        //                 case "s":
+        //                   // decremento y
+        //                   y = parseInt(y) - 1;
+        //                   break;
+        //                 case "o":
+        //                   // decremento x
+        //                   x = parseInt(x) - 1;
+        //                   break;
+        //                 default: 
+        //                 // TODO: dare errore
+        //             }
 
-                    break;
+        //             break;
 
-                    case "F":
-                    // f -> vai avanti
+        //             case "F":
+        //             // f -> vai avanti
 
-                    switch (d){
-                        case "n":
-                          // incremento y   
-                          y = parseInt(y) + 1;
-                        break;
-                        case "e":
-                          // incremento x
-                          x = parseInt(x) + 1;
-                        break;
-                        case "s":
-                          // decremento y
-                          y = parseInt(y) - 1;
-                          break;
-                        case "o":
-                            // decremento x
-                            x = parseInt(x) - 1;
-                            break;
-                        default: 
-                        // TODO: dare errore
-                    }
+        //             switch (d){
+        //                 case "n":
+        //                   // incremento y   
+        //                   y = parseInt(y) + 1;
+        //                 break;
+        //                 case "e":
+        //                   // incremento x
+        //                   x = parseInt(x) + 1;
+        //                 break;
+        //                 case "s":
+        //                   // decremento y
+        //                   y = parseInt(y) - 1;
+        //                   break;
+        //                 case "o":
+        //                     // decremento x
+        //                     x = parseInt(x) - 1;
+        //                     break;
+        //                 default: 
+        //                 // TODO: dare errore
+        //             }
 
-                    break;
+        //             break;
 
-                    case "o":
-                        // o -> ruota in senso orario
-                        d = ruota_orario(d);
-                    break;
+        //             case "o":
+        //                 // o -> ruota in senso orario
+        //                 d = ruota_orario(d);
+        //             break;
 
-                    case "O":
-                        // o -> ruota in senso orario
-                        d = ruota_orario(d);
-                    break;
+        //             case "O":
+        //                 // o -> ruota in senso orario
+        //                 d = ruota_orario(d);
+        //             break;
 
-                    case "a":
-                        // a -> ruota in senso antiorario
-                        d = ruota_antiorario(d);
-                    break;
+        //             case "a":
+        //                 // a -> ruota in senso antiorario
+        //                 d = ruota_antiorario(d);
+        //             break;
 
-                    case "A":
-                        // a -> ruota in senso antiorario
-                        d = ruota_antiorario(d);
-                    break;
+        //             case "A":
+        //                 // a -> ruota in senso antiorario
+        //                 d = ruota_antiorario(d);
+        //             break;
 
-                    default:
-                    // TODO: dare errore
-                }
+        //             default:
+        //             // TODO: dare errore
+        //         }
 
-                last = [x,y,d];
-                percorso.push(last);
+        //         last = [x,y,d];
+        //         percorso.push(last);
 
-            }
+        //     }
 
-            $("#risultato").html("");
-            for (i in percorso){
+        //     $("#risultato").html("");
+        //     for (i in percorso){
 
-              $("#risultato").append ("[" + percorso[i][0] + "," + percorso[i][1] + "," + percorso[i][2] + "]") 
+        //       $("#risultato").append ("[" + percorso[i][0] + "," + percorso[i][1] + "," + percorso[i][2] + "]") 
 
-                if (i < percorso.length - 1){
-                    $("#risultato").append(",");
-                }
+        //         if (i < percorso.length - 1){
+        //             $("#risultato").append(",");
+        //         }
 
-            }
-            console.log(percorso);
+        //     }
+        //     console.log(percorso);
 
-          }
+        //   }
 
-        </script>  
+        // </script>  
         
         <script>
             includeHTML();
