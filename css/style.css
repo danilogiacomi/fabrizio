@@ -29,13 +29,16 @@
     --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* body */
+
+/* vale per il body */
 body {
     /* colore del testo */
     color: #000000;
@@ -49,26 +52,104 @@ body {
     line-height: 1.5;
 }
 
+
 /* links */
-a:link {
-    color: #000000;
-}
-a:visited {
-    color: #000000;
-}
-a:hover {
-    color: #000000;
-}
-a:active {
-    color: #000000;
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
 }
 
-/* testo */
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+a:not([href]) {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* testo scritto nella pagina */
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
+
 p {
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1em;
+  height: 30px;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+
+
+/* vale per l' attributo form-control */
+.form-control{
+    background-color: #eee;
+}
+
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #ccc;
+    opacity: 1;
+}
+
+
+/* vale per l'attributo custom-select */
+.custom-select {
+    background-color: #eee;
+}
+.custom-select:focus {
+    background-color: #fff
+}
+.custom-select:disabled {
+    background-color: #ccc
 }

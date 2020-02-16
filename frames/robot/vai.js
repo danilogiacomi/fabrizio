@@ -1,5 +1,5 @@
 
-var direzioni = ["n", "e", "s", "o"];
+var direzioni = ["n", "e", "s", "w"];
 
 
 
@@ -37,6 +37,7 @@ for (i in mosse){
 
     switch (mossa){
         case "f":
+        case "F":    
         // f -> vai avanti
 
         switch (d){
@@ -52,6 +53,7 @@ for (i in mosse){
                 // decremento y
                 y = parseInt(y) - 1;
                 break;
+            case "w":
             case "o":
                 // decremento x
                 x = parseInt(x) - 1;
@@ -62,54 +64,22 @@ for (i in mosse){
 
         break;
 
-        case "F":
+       
         // f -> vai avanti
-
-        switch (d){
-            case "n":
-                // incremento y   
-                y = parseInt(y) + 1;
-            break;
-            case "e":
-                // incremento x
-                x = parseInt(x) + 1;
-            break;
-            case "s":
-                // decremento y
-                y = parseInt(y) - 1;
-                break;
-            case "o":
-                // decremento x
-                x = parseInt(x) - 1;
-                break;
-            default: 
-            // TODO: dare errore
-        }
-
-        break;
 
         case "o":
-            // o -> ruota in senso orario
-            d = ruota_orario(d);
-        break;
-
         case "O":
             // o -> ruota in senso orario
             d = ruota_orario(d);
         break;
 
         case "a":
-            // a -> ruota in senso antiorario
-            d = ruota_antiorario(d);
-        break;
-
         case "A":
             // a -> ruota in senso antiorario
             d = ruota_antiorario(d);
         break;
 
         default:
-        // TODO: dare errore
     }
 
     last = [x,y,d];
