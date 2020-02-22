@@ -55,8 +55,17 @@ if (verso == "direct"){
 testoCriptato = "";
     for (var i = 0; i < testo.length; i++) {    
         l = testo.charAt(i).toUpperCase();
-        posizioneInAlf = source.indexOf(l);
-        testoCriptato += dest[posizioneInAlf];
+        switch(l) {
+            case (" "):
+                testoCriptato += " ";
+            break;
+            default:
+                posizioneInAlf = source.indexOf(l);
+                testoCriptato += dest[posizioneInAlf];
+            break;
+        }
+        // l = testo.charAt(i).toUpperCase();
+        // posizioneInAlf = source.indexOf(l);
     }
 
     return testoCriptato;
