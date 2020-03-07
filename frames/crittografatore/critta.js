@@ -14,27 +14,22 @@ function rot (testo, direzione, chiave, alf){
     alf2=[] ;
     // se la chiave e' > alf.length facciamo il modulo
     chiave = chiave % alf.length;
-
-
-
-if (direzione == 'left') {
-    for(i=parseInt(chiave); i<alf.length; i++){
-        alf2.push(alf[i]);
+    if (direzione == 'left') {
+        for(i=parseInt(chiave); i<alf.length; i++){
+            alf2.push(alf[i]);
+        }
+        for(i=0; i<parseInt(chiave); i++){
+            alf2.push(alf[i]);
+        }
     }
-    for(i=0; i<parseInt(chiave); i++){
-        alf2.push(alf[i]);
+    else {
+        for(i=parseInt(alf.length-chiave); i<alf.length; i++){
+            alf2.push(alf[i]);
+        }
+        for(i=0; i<parseInt(alf.length-chiave); i++){
+            alf2.push(alf[i]);
+        }
     }
-
-} else {
-    for(i=parseInt(alf.length-chiave); i<alf.length; i++){
-        alf2.push(alf[i]);
-    }
-    for(i=0; i<parseInt(alf.length-chiave); i++){
-        alf2.push(alf[i]);
-    }
-
-
-}
 
     return alf2;
 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="/css/fabrizio.css">   
+        <script src="/css/bootstrap/js/jquery-3.4.1.slim.js">
+        </script>
+        <script src="/css/bootstrap/js/popper.js">
+        </script>
+        <script src="/css/bootstrap/js/bootstrapcdn.js">
+        </script>
+        <script src="/includehtml.js">
+        </script>
+        <title>
+            Calcolatrice - fabrizio.rf.gd
+        </title>
+        <link rel="icon" href="/pack.png" style="width:100%;">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="navbar" w3-include-html="/frames/navbar.html">
+        </div>
+        <br>
+        <br>
+        <div id="cookies" w3-include-html="/frames/cookies.html">
+        </div>
+        <div class="container">
+            <div id="breadcrumb">
+                <div class="container animated bounceInLeft">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Calcolatrice</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div id="jumbtron">
+                <div class="container animated bounceInLeft">
+                    <div class="jumbotron animated bounceInLeft">
+                        <div class="container">
+                            <h1>
+                                Calcolatrice
+                            </h1>
+                            <p>
+                                L'ultimo strumento di fabrizio.rf.gd, utile in tutte le situazioni e a portata di click.
+                                Scopri tutti gli strumenti.
+                            </p>
+                            <br>
+                            <p>
+                                <a class="btn btn-outline-primary btn-lg" href="/" role="button" title="Scopri tutti gli strumenti">
+                                    Scopri
+                                    <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" clip-rule="evenodd">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="container">
+            <div class="container animated bounceInUp">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <h1>Attenzione</h1>
+                    Scrivi solo addizioni, sottrazioni, moltiplicazioni e divisioni.
+                </div>
+
+                <div class="input-group">
+                    <input type="text" title="Scrivi qui il primo termine dell'operazione" placeholder="Primo termine" name="unoterm" id="unoterm" class="form-control"/>
+                    <select name="segno" id="segno" class="custom-select">
+                        <option value="plus">
+                            &plus;
+                        </option>
+                        <option value="minus">
+                            &minus;
+                        </option>
+                        <option value="times">
+                            &times;
+                        </option>
+                        <option value="divide">
+                            &divide;
+                        </option>
+                    </select>
+                    <input type="text" name="dueterm" id="dueterm" placeholder="Secondo termine" title="Scrivi qui il secondo termine" class="form-control"/>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="submit" onclick="calcola()" name="calcola" id="calcola" title="Calcola il risultato dell'operazione">
+                            Calcola
+                        </button>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                Risultato
+                <div id="risultato">
+                </div>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div id="footer" w3-include-html="/frames/footer.html">
+            </div>
+        </div>
+        <script src="/frames/calcolatrice/calcola.js">
+        </script>
+        <script>
+            includeHTML();
+        </script>
+    </body>
+</html>

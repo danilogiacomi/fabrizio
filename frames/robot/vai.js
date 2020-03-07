@@ -1,4 +1,3 @@
-
 var direzioni = ["n", "e", "s", "w"];
 
 

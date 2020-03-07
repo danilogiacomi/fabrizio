@@ -19,7 +19,7 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
         </script>
         <script src="/includehtml.js">
         </script>
-        <title> Crittografatore</title>
+        <title> Crittografatore - fabrizio.rf.gd</title>
         <link rel="icon" href="/pack.png" style="width:100%;">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     </head>
@@ -31,6 +31,8 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
         <br>
         <br>
         <br>
+        <div id="cookies" w3-include-html="/frames/cookies.html">
+        </div>
         <div class="container animated bounceInLeft">
 
             <nav aria-label="breadcrumb">
@@ -92,7 +94,7 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
                 <div class="col-12">
                     <form class="form-inline">
                         <label for="direzione">Direzione </label>
-                        &nbsp;<select class="custom-select mr-sm-2" id="direzione" title="Seleziona la direzione in cui verra' crittato il messaggio">
+                        &nbsp;<select class="custom-select mr-sm-2" id="direzione" name="direzione" title="Seleziona la direzione in cui verra' crittato il messaggio">
                             <option value="left">Sx</option>
                             <option value="right">Dx</option>
                         </select>
@@ -103,8 +105,10 @@ Vedi https://getbootstrap.com/docs/4.4/getting-started/introduction/
                 
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" value="Cripta" onclick="vai('direct')" title="Cripta">Cripta</button>
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" value="Decripta" onclick="vai('inverse')" title="Decripta">Decripta</button>                    
+                    <div class="btn-group">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" value="Cripta" onclick="vai('direct')" title="Cripta">Cripta</button>
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" value="Decripta" onclick="vai('inverse')" title="Decripta">Decripta</button>   
+                    </div>
                 </div> 
             </div>   
             <br>
