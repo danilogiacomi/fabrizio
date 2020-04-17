@@ -67,30 +67,31 @@
                     <h1>Attenzione</h1>
                     Scrivi solo addizioni, sottrazioni, moltiplicazioni e divisioni.
                 </div>
-
-                <div class="input-group">
-                    <input type="text" title="Scrivi qui il primo termine dell'operazione" placeholder="Primo termine" name="unoterm" id="unoterm" class="form-control"/>
-                    <select name="segno" id="segno" class="custom-select">
-                        <option value="plus">
-                            &plus;
-                        </option>
-                        <option value="minus">
-                            &minus;
-                        </option>
-                        <option value="times">
-                            &times;
-                        </option>
-                        <option value="divide">
-                            &divide;
-                        </option>
-                    </select>
-                    <input type="text" name="dueterm" id="dueterm" placeholder="Secondo termine" title="Scrivi qui il secondo termine" class="form-control"/>
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="submit" onclick="calcola()" name="calcola" id="calcola" title="Calcola il risultato dell'operazione">
-                            Calcola
-                        </button>
+                <form class="form">
+                    <div class="input-group">
+                        <input type="text" title="Scrivi qui il primo termine dell'operazione" placeholder="Primo termine" name="unoterm" id="unoterm" class="form-control"/>
+                        <select name="segno" id="segno" class="custom-select">
+                            <option value="plus">
+                                &plus;
+                            </option>
+                            <option value="minus">
+                                &minus;
+                            </option>
+                            <option value="times">
+                                &times;
+                            </option>
+                            <option value="divide">
+                                &divide;
+                            </option>
+                        </select>
+                        <input type="text" name="dueterm" id="dueterm" placeholder="Secondo termine" title="Scrivi qui il secondo termine" class="form-control"/>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="submit" onclick="calcola()" name="calcola" id="calcola" title="Calcola il risultato dell'operazione">
+                                Calcola
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </form>
                 <br>
                 <br>
                 <br>

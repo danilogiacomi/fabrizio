@@ -20,6 +20,6 @@ function calcola() {
             risultato += "Errore";
         break;
     }
-    console.log(risultato);
     $("#risultato").html(risultato);
+    console.log(risultato);
 }
